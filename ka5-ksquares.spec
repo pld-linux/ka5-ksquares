@@ -1,14 +1,14 @@
-%define		kdeappsver	18.12.0
+%define		kdeappsver	18.12.1
 %define		qtver		5.9.0
 %define		kaname		ksquares
 Summary:	ksquares
 Name:		ka5-%{kaname}
-Version:	18.12.0
+Version:	18.12.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d2e59cfb71258d6bd7fa849c18fd090d
+# Source0-md5:	f0618bc936532e402e11488098516592
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -16,7 +16,7 @@ BuildRequires:	Qt5Qml-devel >= 5.11.1
 BuildRequires:	Qt5Quick-devel >= 5.11.1
 BuildRequires:	Qt5Widgets-devel
 BuildRequires:	gettext-devel
-BuildRequires:	ka5-libkdegames-devel >= 18.12.0
+BuildRequires:	ka5-libkdegames-devel >= %{kdeappsver}
 BuildRequires:	kf5-extra-cmake-modules >= 5.30.0
 BuildRequires:	kf5-kconfig-devel >= 5.30.0
 BuildRequires:	kf5-kconfigwidgets-devel >= 5.30.0
@@ -27,6 +27,7 @@ BuildRequires:	kf5-kdoctools-devel >= 5.30.0
 BuildRequires:	kf5-ki18n-devel >= 5.30.0
 BuildRequires:	kf5-kwidgetsaddons-devel >= 5.30.0
 BuildRequires:	kf5-kxmlgui-devel >= 5.30.0
+BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,14 +44,14 @@ more squares than your opponents.
 install -d build
 cd build
 %cmake \
+	-G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} -C build install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{kaname} --all-name --with-kde
 
