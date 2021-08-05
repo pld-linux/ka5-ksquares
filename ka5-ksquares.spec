@@ -38,6 +38,12 @@ game of Dots and Boxes. Each player takes it in turns to draw a line
 between two adjacent dots on the board. The objective is to complete
 more squares than your opponents.
 
+%description -l pl.UTF-8
+KSquares jest grą wzorowaną na dobrze znanej grze rozgrywanej na
+kartce w kropki i kwadraty. Każdy z graczy przy swojej kolejce rysuje
+linię między dwoma sąsiadującymi kropkami na planszy. Celem gry jest
+zakończyć więcej kwadratów niż rywal.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
