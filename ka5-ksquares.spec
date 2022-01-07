@@ -1,15 +1,15 @@
-%define		kdeappsver	21.12.0
+%define		kdeappsver	21.12.1
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		ksquares
 Summary:	ksquares
 Name:		ka5-%{kaname}
-Version:	21.12.0
+Version:	21.12.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	7758c45d722ea60c34b50bac8b223bd8
+# Source0-md5:	771787bac9ba25ac23383d327b50a5bc
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core
 BuildRequires:	Qt5Gui-devel >= 5.11.1
