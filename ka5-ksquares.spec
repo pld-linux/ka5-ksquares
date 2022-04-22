@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		ksquares
 Summary:	ksquares
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	742af9ba79bedd0a330b85a8b8d2e671
+# Source0-md5:	81084d28cdbd5bbf8750810e9b3c3138
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core
 BuildRequires:	Qt5Gui-devel >= 5.11.1
