@@ -1,36 +1,36 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.08.4
+%define		kdeappsver	24.01.95
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		ksquares
 Summary:	ksquares
 Name:		ka5-%{kaname}
-Version:	23.08.4
-Release:	1
+Version:	24.01.95
+Release:	0.1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	58acfaa056dfa5e17f5c89fb0ad0c621
+Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	b924ab12d1f13bbc9248582814f93434
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core
-BuildRequires:	Qt5Gui-devel >= 5.11.1
-BuildRequires:	Qt5Qml-devel >= 5.11.1
-BuildRequires:	Qt5Quick-devel >= 5.11.1
-BuildRequires:	Qt5Widgets-devel
+BuildRequires:	Qt6Core
+BuildRequires:	Qt6Gui-devel >= 5.11.1
+BuildRequires:	Qt6Qml-devel >= 5.11.1
+BuildRequires:	Qt6Quick-devel >= 5.11.1
+BuildRequires:	Qt6Widgets-devel
 BuildRequires:	gettext-devel
 BuildRequires:	ka5-libkdegames-devel >= %{kdeappsver}
-BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
-BuildRequires:	kf5-kconfig-devel >= %{kframever}
-BuildRequires:	kf5-kconfigwidgets-devel >= %{kframever}
-BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
-BuildRequires:	kf5-kcrash-devel >= %{kframever}
-BuildRequires:	kf5-kdbusaddons-devel >= %{kframever}
-BuildRequires:	kf5-kdoctools-devel >= %{kframever}
-BuildRequires:	kf5-ki18n-devel >= %{kframever}
-BuildRequires:	kf5-kwidgetsaddons-devel >= %{kframever}
-BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
+BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf6-kconfig-devel >= %{kframever}
+BuildRequires:	kf6-kconfigwidgets-devel >= %{kframever}
+BuildRequires:	kf6-kcoreaddons-devel >= %{kframever}
+BuildRequires:	kf6-kcrash-devel >= %{kframever}
+BuildRequires:	kf6-kdbusaddons-devel >= %{kframever}
+BuildRequires:	kf6-kdoctools-devel >= %{kframever}
+BuildRequires:	kf6-ki18n-devel >= %{kframever}
+BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -78,10 +78,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ksquares
 %{_desktopdir}/org.kde.ksquares.desktop
 %{_datadir}/config.kcfg/ksquares.kcfg
-%{_iconsdir}/hicolor/128x128/apps/ksquares.png
-%{_iconsdir}/hicolor/16x16/apps/ksquares.png
-%{_iconsdir}/hicolor/22x22/apps/ksquares.png
-%{_iconsdir}/hicolor/32x32/apps/ksquares.png
-%{_iconsdir}/hicolor/48x48/apps/ksquares.png
-%{_iconsdir}/hicolor/64x64/apps/ksquares.png
+%{_iconsdir}/hicolor/*x*/apps/ksquares.png
 %{_datadir}/metainfo/org.kde.ksquares.appdata.xml
